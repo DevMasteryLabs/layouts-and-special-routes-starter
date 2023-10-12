@@ -1,6 +1,16 @@
-import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { logout } from '../store/userSlice'
 
 function Sidebar() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    dispatch(logout())
+    navigate("/")
+  }
+  
   return (
     <nav className="main-menu">
       <ul>
@@ -20,7 +30,7 @@ function Sidebar() {
       </ul>
 
       <ul className="logout">
-        <li>
+        <li onClick={handleLogout} style={{ cursor: "pointer" }}>
           <a>
             <i className="fa fa-power-off"></i>
             <span className="nav-text">Logout</span>
