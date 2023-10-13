@@ -15,12 +15,19 @@ function Sidebar() {
     <nav className="main-menu">
       <ul>
         <li>
+          <NavLink to="/">
+            <i className="fa fa-home"></i>
+            <span className="nav-text">Home</span>
+          </NavLink>
+        </li>
+
+        <li>
           <NavLink to="/dashboard">
             <i className="fa fa-sliders"></i>
             <span className="nav-text">Dashboard</span>
           </NavLink>
-
         </li>
+
         <li>
           <NavLink to="/profile">
             <i className="fa fa-user"></i>
