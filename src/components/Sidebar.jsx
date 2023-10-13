@@ -1,14 +1,12 @@
 import { useDispatch } from 'react-redux'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { logout } from '../store/userSlice'
 
 function Sidebar() {
   const dispatch = useDispatch()
-  const navigate = useNavigate()
 
   const handleLogout = () => {
     dispatch(logout())
-    navigate("/")
   }
   
   return (
